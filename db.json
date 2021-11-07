@@ -1,0 +1,50 @@
+{
+  "users": [
+    {
+      "name": "Tom",
+      "email": "m16mpei@yandex.ru"
+    },
+    {
+      "name": "Kate",
+      "email": "kate90@gmail.com"
+    },
+    {
+      "name": "Alice",
+      "email": "angel99@gmail.ru"
+    }
+  ],
+  "employees": [
+    {
+      "name": "Kate",
+      "email": "kate34@km.com",
+      "phone": "+996703915396",
+      "salary": 500,
+      "lastVacation": "2020-09-18",
+      "id": 4
+    },
+    {
+      "name": "Loky",
+      "email": "loki@hh.ru",
+      "phone": "+996903999000",
+      "salary": 3000,
+      "lastVacation": "2021-10-04T18:00:00.000Z",
+      "id": 5
+    },
+    {
+      "name": "Tor",
+      "email": "Tor.bog@mail.ru",
+      "phone": "+996900900900",
+      "salary": 49999,
+      "lastVacation": "2021-11-03T18:00:00.000Z",
+      "id": 6
+    },
+    {
+      "name": "Beksultan",
+      "email": "sd@ru",
+      "phone": "+996000000000",
+      "salary": 232,
+      "lastVacation": "2021-11-09T18:00:00.000Z",
+      "id": 7
+    }
+  ]
+}
