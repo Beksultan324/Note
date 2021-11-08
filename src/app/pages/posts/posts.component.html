@@ -1,0 +1,10 @@
+<mat-card *ngFor="let item of posts" class="post-card">
+  <mat-card-title>{{ item.title }}</mat-card-title>
+  <mat-card-subtitle>{{ item.date }}</mat-card-subtitle>
+  <mat-card-content>
+    <p>{{ item.body }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a [routerLink]="['/post', item.id]" mat-button>Open</a>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,24 @@
+<h1>Post</h1>
+<form [formGroup]="postForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <textarea matInput formControlName="title"></textarea>
+    <mat-error>{{ getErrorMessage("title") }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Body</mat-label>
+    <textarea matInput formControlName="body"></textarea>
+    <mat-error>{{ getErrorMessage("body") }}</mat-error>
+  </mat-form-field>
+  <div class="actions">
+    <button mat-stroked-button (click)="cancel()">Cancel</button>
+    <button
+      [disabled]="postForm.invalid"
+      mat-stroked-button
+      color="primary"
+      (click)="editPost(postForm.controls)"
+    >
+      Edit post
+    </button>
+  </div>
+</form>

@@ -1,33 +1,13 @@
-.btn {
-  height: 36px;
-  min-width: 64px;
-  padding: 0 16px;
-  background-color: #f5f5f5;
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 0.875rem;
-  align-items: center;
-  border-radius: 4px;
-  display: inline-flex;
-  flex: 0 0 auto;
-  font-weight: 600;
-  letter-spacing: 0.0892857143em;
-  justify-content: center;
-  outline: 0;
-  position: relative;
+.link {
+  margin: 10px;
   text-decoration: none;
-  text-indent: 0.0892857143em;
-  text-transform: uppercase;
-  transition-duration: 0.28s;
-  transition-property: box-shadow, transform, opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  border: none;
-  margin: 10px 0 0 10px;
+  color: white;
 
-  &.btn-send {
-    background-color: #1867c0 !important;
+  &.active {
+    background: rgba(0,0,0,.2);
   }
+}
+
+.container {
+  padding: 10px;
 }

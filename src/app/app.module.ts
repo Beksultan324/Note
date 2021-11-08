@@ -22,13 +22,23 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 
 import { ConfirmDialogModule } from './shared/components/confirm-dialog/confirm-dialog.module';
 import { UpdateEmployeeComponent } from './pages/employees/components/update-employee/update-employee.component';
+import { AboutComponent } from './pages/about/about.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { PostsComponent } from './pages/posts/posts.component';
+import { PostComponent } from './pages/post/post.component';
 
 const routes: Routes = [
   { path: 'employees', component: EmployeesComponent },
   { path: 'add-employee', component: AddEmployeeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'posts', component: PostsComponent },
+  { path: 'post', children: [{ path: ':postId', component: PostComponent }] },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
@@ -39,6 +49,9 @@ const routes: Routes = [
     EmployeesComponent,
     AddEmployeeComponent,
     UpdateEmployeeComponent,
+    AboutComponent,
+    PostsComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +69,8 @@ const routes: Routes = [
     MatNativeDateModule,
     MatDialogModule,
     ConfirmDialogModule,
+    MatToolbarModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

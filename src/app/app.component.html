@@ -1,91 +1,13 @@
-<router-outlet></router-outlet>
-
-<!-- <app-child-comp></app-child-comp> -->
-
-
-<!-- GET -->
-
-<!-- first
-<form [formGroup]="myForm" novalidate>
-  <div class="form-group">
-    <label>Name</label>
-    <input class="form-control" name="name" formControlName="userName">
-  </div>
-  <div class="form-group">
-    <label>Email</label>
-    <input class="form-control" name="email" formControlName="userEmail">
-  </div>
-  <div class="form-group">
-    <label>Phone</label>
-    <input class="form-control" name="phone" formControlName="userPhone">
-  </div>
-</form>
--->
-
-<!-- <h2>GET request</h2>
-<ul *ngFor="let user of users">
-  <li>
-    <div class="form-group">
-      <label>Name</label>
-      <input class="form-control" name="name" [(ngModel)]="user.name">
-    </div>
-  </li>
-  <li>
-    <div class="form-group">
-      <label>Email</label>
-      <input class="form-control" name="email" [(ngModel)]="user.email">
-    </div>
-  </li>
-  <li>
-    <div class="form-group">
-      <label>Phone</label>
-      <input class="form-control" name="phone" [(ngModel)]="user.phones">
-    </div>
-  </li>
-</ul>
-
-<div>
-  <h2>POST request</h2>
-  <form [formGroup]="myForm" novalidate>
-    <div class="form-group">
-      <label>Name</label>
-      <input class="form-control" name="name" formControlName="name" placeholder="Name">
-    </div>
-    <div class="form-group">
-      <label>Email</label>
-      <input class="form-control" name="email" formControlName="email" placeholder="email">
-    </div>
-    <div class="form-group">
-      <label>Phone</label>
-      <input class="form-control" name="phone" formControlName="phone" placeholder="phone">
-    </div>
-    <div class="form-group">
-      <button (click)="onCreateUser()">Create</button>
-    </div>
-  </form>
+<mat-toolbar color="primary">
+  <a
+    mat-button
+    class="link"
+    *ngFor="let item of links"
+    routerLinkActive="active"
+    [routerLink]="item.href"
+    >{{ item.text }}
+  </a>
+</mat-toolbar>
+<div class="container">
+  <router-outlet></router-outlet>
 </div>
-
-<div>
-  <h2>PUT request</h2>
-  <form [formGroup]="editForm" novalidate>
-    <div class="form-group">
-      <label>Name</label>
-      <input class="form-control" name="name" formControlName="name" placeholder="Name">
-    </div>
-    <div class="form-group">
-      <label>Email</label>
-      <input class="form-control" name="email" formControlName="email" placeholder="email">
-    </div>
-    <div class="form-group">
-      <label>Phone</label>
-      <input class="form-control" name="phone" formControlName="phone" placeholder="phone">
-    </div>
-    <div class="form-group">
-      <label>Id</label>
-      <input class="form-control" name="id" formControlName="id" placeholder="Id">
-    </div>
-    <div class="form-group">
-      <button (click)="onEditUser()">Create</button>
-    </div>
-  </form>
-</div> -->
