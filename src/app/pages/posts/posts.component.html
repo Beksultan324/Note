@@ -1,4 +1,4 @@
-<mat-card *ngFor="let item of posts" class="post-card">
+<mat-card *ngFor="let item of posts$ | async" class="post-card">
   <mat-card-title>{{ item.title }}</mat-card-title>
   <mat-card-subtitle>{{ item.date }}</mat-card-subtitle>
   <mat-card-content>
@@ -8,3 +8,25 @@
     <a [routerLink]="['/post', item.id]" mat-button>Open</a>
   </mat-card-actions>
 </mat-card>
+<h2>Dynamic component</h2>
+<mat-form-field appearance="fill" class="dynamic-component">
+  <mat-label>Favorite food</mat-label>
+  <mat-select [(value)]="selected">
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="outline" class="dynamic-component">
+  <mat-label>Title</mat-label>
+  <input matInput [(ngModel)]="title"/>
+</mat-form-field>
+<div class="dynamic-component">
+  <button mat-stroked-button (click)="addComponent()">Add component</button>
+  <ng-container #container class="ng-container"></ng-container>
+</div>
+
+<pre *ngIf="posts[0] as myPosts">
+  {{ myPosts.title  }}
+</pre>
+

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 import { IEmployee } from 'src/app/models/employees';
 import { EmployeesApiService } from 'src/app/services/employees-api.service';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
@@ -22,6 +24,9 @@ export class EmployeesComponent implements OnInit {
     'actions',
   ];
   employees: IEmployee[] = [];
+
+  employees$: Observable<IEmployee[]>;
+  salaries$: Observable<number[]>;
 
   constructor(
     private employeesApi: EmployeesApiService,
@@ -52,8 +57,6 @@ export class EmployeesComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result: boolean) => {
-      console.log(result);
-
       if (result) {
         this.getEmployees();
       }
@@ -61,8 +64,21 @@ export class EmployeesComponent implements OnInit {
   }
 
   getEmployees(): void {
-    this.employeesApi.getEmployees().subscribe((employees) => {
-      this.employees = employees;
-    });
+    this.employees$ = this.employeesApi.getEmployees()
+    .pipe(
+      tap((employees) => {
+        this.employees = employees;
+      })
+    );
+
+    this.salaries$ = this.employeesApi.getEmployees()
+    .pipe(
+      map((employees: IEmployee[]) => {
+        const salaries: number[] = employees.map((item) => {
+          return item.salary;
+        });
+        return salaries;
+      })
+    );
   }
 }

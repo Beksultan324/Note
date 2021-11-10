@@ -1,5 +1,5 @@
 <h1>List of employees</h1>
-<table mat-table [dataSource]="employees" class="employees-table">
+<table mat-table [dataSource]="employees$ | async" class="employees-table">
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
@@ -50,3 +50,5 @@
     </td>
   </ng-container>
 </table>
+
+<pre>{{ salaries$ | async }}</pre>

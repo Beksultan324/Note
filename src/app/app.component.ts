@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import {
   FormArray,
   FormControl,
@@ -35,6 +35,10 @@ export class AppComponent {
     {
       text: 'About',
       href: '/about',
+    },
+    {
+      text: 'Child',
+      href: '/child',
     },
     {
       text: 'Posts',

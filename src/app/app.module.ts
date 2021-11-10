@@ -31,12 +31,19 @@ import { AboutComponent } from './pages/about/about.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { PostComponent } from './pages/post/post.component';
+import { CreatePostComponent } from './pages/posts/components/create-post/create-post.component';
+import { MatSelectModule } from '@angular/material/select';
+import { PizzaBanerComponent } from './pages/posts/components/pizza-baner/pizza-baner.component';
+import { TacosBanerComponent } from './pages/posts/components/tacos-baner/tacos-baner.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const routes: Routes = [
   { path: 'employees', component: EmployeesComponent },
   { path: 'add-employee', component: AddEmployeeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'child', component: ChildCompComponent },
   { path: 'posts', component: PostsComponent },
+  { path: 'contact', redirectTo: '/employees', pathMatch: 'full' },
   { path: 'post', children: [{ path: ':postId', component: PostComponent }] },
   { path: '**', component: NotFoundComponent },
 ];
@@ -52,6 +59,9 @@ const routes: Routes = [
     AboutComponent,
     PostsComponent,
     PostComponent,
+    CreatePostComponent,
+    PizzaBanerComponent,
+    TacosBanerComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +81,8 @@ const routes: Routes = [
     ConfirmDialogModule,
     MatToolbarModule,
     MatCardModule,
+    MatSelectModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

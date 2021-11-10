@@ -22,4 +22,8 @@ export class PostsApiService {
   editPost(body: IPost): Observable<void> {
     return this.http.put<void>(`${this.endPoint}/${body.id}`, body);
   }
+
+  getFakePosts(): Observable<void> {
+    return this.http.get<void>(`${this.endPoint}/fake`);
+  }
 }
