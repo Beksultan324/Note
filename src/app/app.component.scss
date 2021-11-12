@@ -11,3 +11,22 @@
 .container {
   padding: 10px;
 }
+
+.link-sidenav {
+  margin: 10px;
+  text-decoration: none;
+  display: block;
+
+  &.active {
+    background: rgba(0,0,0,.2);
+  }
+}
+
+.sidenav {
+  display: inline-block;
+  // width: 250px;
+}
+
+.drawer-container {
+  height: calc(100% - 64px);
+}

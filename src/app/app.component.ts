@@ -44,5 +44,15 @@ export class AppComponent {
       text: 'Posts',
       href: '/posts',
     },
+    {
+      text: 'Products',
+      href: '/products',
+    },
+    {
+      text: 'Login',
+      href: '/login',
+    },
   ];
+
+  showFiller = false;
 }

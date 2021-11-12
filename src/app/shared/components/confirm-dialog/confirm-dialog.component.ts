@@ -6,6 +6,7 @@ export interface ConfirmDialogData {
 }
 
 @Component({
+  selector: 'app-got',
   templateUrl: './confirm-dialog.component.html',
   styleUrls: ['./confirm-dialog.component.scss'],
 })

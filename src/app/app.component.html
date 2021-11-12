@@ -1,4 +1,14 @@
 <mat-toolbar color="primary">
+  <div class="example-sidenav-content">
+    <button
+      (click)="drawer.toggle()"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
   <a
     mat-button
     class="link"
@@ -8,6 +18,22 @@
     >{{ item.text }}
   </a>
 </mat-toolbar>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+
+<mat-drawer-container class="drawer-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <a
+      mat-stroked-button
+      class="link-sidenav"
+      *ngFor="let item of links"
+      routerLinkActive="active"
+      [routerLink]="item.href"
+      >{{ item.text }}
+    </a>
+  </mat-drawer>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
+
+

@@ -36,6 +36,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { PizzaBanerComponent } from './pages/posts/components/pizza-baner/pizza-baner.component';
 import { TacosBanerComponent } from './pages/posts/components/tacos-baner/tacos-baner.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatStepperModule } from '@angular/material/stepper';
+import { CdkStepperModule } from '@angular/cdk/stepper';
 
 const routes: Routes = [
   { path: 'employees', component: EmployeesComponent },
@@ -45,6 +48,12 @@ const routes: Routes = [
   { path: 'posts', component: PostsComponent },
   { path: 'contact', redirectTo: '/employees', pathMatch: 'full' },
   { path: 'post', children: [{ path: ':postId', component: PostComponent }] },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./pages/products/products.module').then((m) => m.ProductsModule),
+  },
+  { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
   { path: '**', component: NotFoundComponent },
 ];
 
@@ -83,6 +92,9 @@ const routes: Routes = [
     MatCardModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatSidenavModule,
+    MatStepperModule,
+    CdkStepperModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
