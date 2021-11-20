@@ -5,10 +5,8 @@ import { LoginComponent } from './login.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatStepper, MatStepperModule } from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {CdkStepper, CdkStepperModule} from '@angular/cdk/stepper';
-
 
 const routes: Routes = [{ path: '', component: LoginComponent }];
 
@@ -20,14 +18,9 @@ const routes: Routes = [{ path: '', component: LoginComponent }];
     MatFormFieldModule,
     MatInputModule,
     MatStepperModule,
-    CdkStepperModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  schemas: [  ],
-  providers: [
-    MatStepper,
-    CdkStepper,
-  ]
+  schemas: [],
 })
 export class LoginModule {}

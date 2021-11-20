@@ -1,1 +1,25 @@
-<h1>Products</h1>
+<!-- <h1>Products</h1>
+<div>Без форматирование: {{myData}}</div>
+<div>С форматированием: {{myData | date:"MM/dd/yyyy"}}</div>
+<div>{{welcome | uppercase}}</div>
+<div>{{welcome | lowercase}}</div>
+<div>{{sum | currency:'EU':'symbol':'1.4-4'}}</div> -->
+
+<!-- <ng-container *ngIf="employees$ | async as employees">
+</ng-container> -->
+<!-- <p>{{ employeeName$ | async }}</p> -->
+
+<p appBold [selectedColor]="'red'">This is Angular</p>
+<p appBold selectedColor="orange">This is not Angular</p>
+
+<div>{{ worker }}</div>
+
+<!-- {{ log() }} -->
+
+<!-- <button (click)="click()">Click me</button> -->
+<button (click)="genereteError()">Click me</button>
+
+<!-- []="423525 + 4234 -423 * 342 + peremennaya" => какое то число -->
+<!-- selectedColor="423525 + 4234 -423 * 342 + peremennaya" => '423525 + 4234 -423 * 342 + peremennaya' Строка -->
+<!-- isUpper="true" => 'true' => СТРОКА -->
+<!-- [isUpper]="true" => Boolean true -->

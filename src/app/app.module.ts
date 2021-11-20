@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { ChildCompComponent } from './child-comp/child-comp.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BoldDirective } from './directives/bold.directive';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,6 +38,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatStepperModule } from '@angular/material/stepper';
 import { CdkStepperModule } from '@angular/cdk/stepper';
+import { CoreModule } from './core/core.module';
+import { CounterDirective } from './directives/counter.directive';
+import { ClickStopPropagationDirective } from './directives/click-stop-propagation.directive';
 
 const routes: Routes = [
   { path: 'employees', component: EmployeesComponent },
@@ -61,7 +63,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ChildCompComponent,
-    BoldDirective,
     EmployeesComponent,
     AddEmployeeComponent,
     UpdateEmployeeComponent,
@@ -71,6 +72,8 @@ const routes: Routes = [
     CreatePostComponent,
     PizzaBanerComponent,
     TacosBanerComponent,
+    CounterDirective,
+    ClickStopPropagationDirective,
   ],
   imports: [
     BrowserModule,
@@ -95,6 +98,7 @@ const routes: Routes = [
     MatSidenavModule,
     MatStepperModule,
     CdkStepperModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

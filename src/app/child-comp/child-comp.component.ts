@@ -51,12 +51,24 @@ export class ChildCompComponent implements OnInit {
     },
     {
       name: 'Tom',
-      age: 12,
+      age: 29,
     },
   ];
 
+  isVerdanaFont = true;
+  isSegoePrintFont = true;
+
+  isUserLogedIn = false;
+
   constructor() {}
   ngOnInit(): void {
+    // Динамическое изменение стилей
+    this.rxjs.nativeElement.addEventListener('click', () => {
+      this.isSegoePrintFont = !this.isSegoePrintFont;
+    });
+
+
+    // ----------------------------------------------------------
     // console.log(this.rxjs); // Т.к. мы указали в ViewChild в качестве опции {static: true}, то он теперь доступен в ngOnInit().
 
     // this.rxjs.nativeElement.addEventListener('click', () => {
@@ -98,7 +110,7 @@ export class ChildCompComponent implements OnInit {
     // );
 
     // document.addEventListener('click', () => {
-    //   const steam$ = new ReplaySubject(1);
+    //   const steam$ = new ReplaySubject(2); // if here (2), then we have 2 message 'Hello' and 'World'
     //   steam$.next('Hello!');
     //   steam$.next('World!');
     //   steam$.subscribe((v) => console.log(v));
@@ -121,4 +133,18 @@ export class ChildCompComponent implements OnInit {
     //   canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
     // });
   }
+
+  divOnClick(): void {
+    console.log('div');
+  }
+
+  HOnClick(): void {
+    console.log('h2');
+  }
+
+  onClick(): void {
+    console.log('p');
+  }
+
+  isFontWeight = true;
 }

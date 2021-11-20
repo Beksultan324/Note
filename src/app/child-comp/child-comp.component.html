@@ -1,11 +1,77 @@
-<p>This is Child-elem</p>
+<p [ngClass]="{ verdanaFont: isVerdanaFont }">This is Child-elem</p>
 <div>
-  <button #rxjs>Show RxJS</button>
-  <input type="text" [(ngModel)]="name">
+  <p [ngClass]="{ segoePrintFont: isSegoePrintFont }">About RxJS</p>
+  <button #rxjs appCounter>Show RxJS</button>
+  <input type="text" [(ngModel)]="name" />
 </div>
 <div class="creation">
-  <canvas #canvas width="500" height="200" style="border: 1px solid #eee"></canvas>
+  <canvas
+    #canvas
+    width="500"
+    height="200"
+    style="border: 1px solid #eee"
+  ></canvas>
   <div>
     <button #clear>Clear</button>
   </div>
 </div>
+
+<div (click)="divOnClick()">
+  <h2 (click)="HOnClick()">
+    <p appClickStopPropagation (click)="onClick()">This is p</p>
+  </h2>
+</div>
+
+<!-- <div *ngIf="true; then userLogedIn else userNotLogedIn">
+  <p>Hello User</p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eveniet
+    provident temporibus dolore quas. Exercitationem culpa maxime facere totam
+    quibusdam quos quia, tenetur quod similique, enim in quisquam tempore earum.
+    Provident aliquam cupiditate laudantium nemo facilis, explicabo repudiandae
+    distinctio tempora quae aliquid delectus dolores. Repellendus quidem,
+    perferendis quam suscipit at nobis vel cum? Id voluptas illum ipsam, numquam
+    nemo cupiditate! Rerum facere dolore ipsam cupiditate, commodi quibusdam,
+    perspiciatis magni officiis odio sint libero impedit aut doloremque
+    temporibus minima placeat aperiam natus, quo alias ullam architecto animi
+    quas asperiores qui? Alias. Consequatur iusto, quidem voluptatibus nesciunt
+    minima modi aut quos rem sed harum nisi deserunt eum, quia dolorem ab eius
+    nemo saepe, placeat cupiditate maxime commodi nulla. Assumenda animi ipsum
+    sit! Facilis porro dicta, in ullam hic perferendis. Et praesentium incidunt
+    nisi, neque minus iure ea corrupti, cum, dicta impedit sunt adipisci
+    deleniti magni vitae ullam omnis. Voluptates cupiditate cum laudantium.
+  </p>
+</div> -->
+
+<ng-template #userLogedIn let-myTitle="title" let-myDescription="description">
+  {{ myTitle }}
+  <p>
+    {{ myDescription }}
+  </p>
+</ng-template>
+
+<ng-template #userNotLogedIn>
+  <div>
+    <p>Hey!</p>
+    <button>Log in</button>
+  </div>
+</ng-template>
+
+<ng-container
+  *ngTemplateOutlet="
+    userLogedIn;
+    context: { description: 'my title', title: 'Hey!' }
+  "
+></ng-container>
+
+<ul>
+  <li *ngFor="let item of people">
+    <ng-container *ngTemplateOutlet="user; context: item"></ng-container>
+  </li>
+</ul>
+
+
+<ng-template #user let-name="name" let-age="age">
+  <h5>{{name}}</h5>
+  <h5>{{ age }}</h5>
+</ng-template>

@@ -1,12 +1,9 @@
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-  {{ !isLinear ? "Enable linear mode" : "Disable linear mode" }}
-</button>
 <mat-stepper #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
+      <ng-template matStepLabel>Please enter your email adress</ng-template>
       <mat-form-field appearance="fill">
-        <mat-label>Name</mat-label>
+        <mat-label>Email</mat-label>
         <input
           matInput
           placeholder="Last name, First name"
@@ -19,10 +16,10 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+  <mat-step [stepControl]="secondFormGroup" label="Please enter your password">
     <form [formGroup]="secondFormGroup">
       <mat-form-field appearance="fill">
-        <mat-label>Address</mat-label>
+        <mat-label>Password</mat-label>
         <input
           matInput
           formControlName="secondCtrl"
